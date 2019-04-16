@@ -31,6 +31,12 @@ namespace LoadGeneratorDotnetCore
             }
             return Encoding.UTF8.GetBytes(payload);
         }
+
+        public byte[] GeneratePayload()
+        {
+            return null;
+        }
+
         public abstract Task GenerateBatchAndSend(int batchSize, bool dryRun, CancellationToken cancellationToken, Func<byte[]> loadGenerator);
     }
 }
