@@ -34,7 +34,7 @@ namespace LoadGeneratorDotnetCore
             return Encoding.UTF8.GetBytes(payload);
         }
 
-        public byte[] GeneratePayload()
+        public byte[] GenerateSignalPayload()
         {
             dynamic signal = new JObject();
             signal.ReceiverId = "1afb3a5a-d4e8-432c-9808-36836a52c12e";
