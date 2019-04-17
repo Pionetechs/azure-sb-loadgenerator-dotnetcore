@@ -56,7 +56,8 @@ namespace LoadGeneratorDotnetCore
                             );
                         break;
                 }
-                func = () => { return loadGeneratee.GeneratePayload(executionOptions.GenerateJson, executionOptions.MessageSize); };
+                //func = () => { return loadGeneratee.GeneratePayload(executionOptions.GenerateJson, executionOptions.MessageSize); };
+                func = () => { return loadGeneratee.GenerateSignalPayload(); };
                 Console.WriteLine(HelperRoutines.GetExecutionSummary(executionOptions, loadGeneratee, func));
 
                 loadOrchestrator = new OrchestratorClass(
@@ -106,7 +107,7 @@ namespace LoadGeneratorDotnetCore
                                 Console.WriteLine($"[{dt}] New target throughput: {executionOptions.TargetThroughput} msg/sec");
 
                                 loadOrchestrator.Stop();
-                                func = () => { return loadGeneratee.GeneratePayload(executionOptions.GenerateJson, executionOptions.MessageSize); };
+                                func = () => { return loadGeneratee.GenerateSignalPayload(); };
                                 loadOrchestrator = new OrchestratorClass(
                                     loadGeneratee, executionOptions.TargetThroughput, executionOptions.MessagesToSend,
                                     executionOptions.BatchSize, executionOptions.DryRun, func);
@@ -120,7 +121,7 @@ namespace LoadGeneratorDotnetCore
                                 Console.WriteLine($"[{dt}] New target throughput: {executionOptions.TargetThroughput} msg/sec");
 
                                 loadOrchestrator.Stop();
-                                func = () => { return loadGeneratee.GeneratePayload(executionOptions.GenerateJson, executionOptions.MessageSize); };
+                                func = () => { return loadGeneratee.GenerateSignalPayload(); };
                                 loadOrchestrator = new OrchestratorClass(
                                     loadGeneratee, executionOptions.TargetThroughput, executionOptions.MessagesToSend,
                                     executionOptions.BatchSize, executionOptions.DryRun, func);
@@ -132,7 +133,7 @@ namespace LoadGeneratorDotnetCore
                                 Console.WriteLine($"[{dt}] New batch size: {executionOptions.BatchSize}");
 
                                 loadOrchestrator.Stop();
-                                func = () => { return loadGeneratee.GeneratePayload(executionOptions.GenerateJson, executionOptions.MessageSize); };
+                                func = () => { return loadGeneratee.GenerateSignalPayload(); };
                                 loadOrchestrator = new OrchestratorClass(
                                     loadGeneratee, executionOptions.TargetThroughput, executionOptions.MessagesToSend,
                                     executionOptions.BatchSize, executionOptions.DryRun, func);
@@ -144,7 +145,7 @@ namespace LoadGeneratorDotnetCore
                                                         1;
                                 Console.WriteLine($"[{dt}] New batch size: {executionOptions.BatchSize}");
                                 loadOrchestrator.Stop();
-                                func = () => { return loadGeneratee.GeneratePayload(executionOptions.GenerateJson, executionOptions.MessageSize); };
+                                func = () => { return loadGeneratee.GenerateSignalPayload(); };
                                 loadOrchestrator = new OrchestratorClass(
                                     loadGeneratee, executionOptions.TargetThroughput, executionOptions.MessagesToSend,
                                     executionOptions.BatchSize, executionOptions.DryRun, func);
