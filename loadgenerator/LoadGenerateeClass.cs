@@ -47,6 +47,19 @@ namespace LoadGeneratorDotnetCore
             return Encoding.UTF8.GetBytes(signal.ToString());
         }
 
+        public byte[] GenerateBatteryPayload()
+        {
+            dynamic battery = new JObject();
+            battery.ReceiverId = "1afb3a5a-d4e8-432c-9808-36836a52c12e";
+            battery.BeaconId = "6E64356144A8675DABB6";
+            battery.BatteryLevel = 2946;
+            battery.TimeStampUtc = DateTime.UtcNow.ToString();
+            battery.Name = "ReceiverBeaconBattery";
+            battery.Version = "1";
+
+            return Encoding.UTF8.GetBytes(battery.ToString());
+        }
+
         public abstract Task GenerateBatchAndSend(int batchSize, bool dryRun, CancellationToken cancellationToken, Func<byte[]> loadGenerator);
     }
 }
