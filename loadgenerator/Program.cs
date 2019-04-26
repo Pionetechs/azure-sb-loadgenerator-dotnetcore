@@ -59,9 +59,14 @@ namespace LoadGeneratorDotnetCore
                 if (executionOptions.EntityPath.Contains("signals"))
                 {
                     func = () => { return loadGeneratee.GenerateSignalPayload(); };
-                } else if (executionOptions.EntityPath.Contains("battery"))
+                } 
+                else if (executionOptions.EntityPath.Contains("battery"))
                 {
                     func = () => { return loadGeneratee.GenerateBatteryPayload(); };
+                }
+                else if (executionOptions.EntityPath.Contains("duress"))
+                {
+                    func = () => { return loadGeneratee.GenerateDuressPayload(); };
                 }
                 else
                 {
@@ -120,9 +125,14 @@ namespace LoadGeneratorDotnetCore
                                 if (executionOptions.EntityPath.Contains("signals"))
                                 {
                                     func = () => { return loadGeneratee.GenerateSignalPayload(); };
-                                } else if (executionOptions.EntityPath.Contains("battery"))
+                                } 
+                                else if (executionOptions.EntityPath.Contains("battery"))
                                 {
                                     func = () => { return loadGeneratee.GenerateBatteryPayload(); };
+                                }
+                                else if (executionOptions.EntityPath.Contains("duress"))
+                                {
+                                    func = () => { return loadGeneratee.GenerateDuressPayload(); };
                                 }
                                 else
                                 {
@@ -144,9 +154,14 @@ namespace LoadGeneratorDotnetCore
                                 if (executionOptions.EntityPath.Contains("signals"))
                                 {
                                     func = () => { return loadGeneratee.GenerateSignalPayload(); };
-                                } else if (executionOptions.EntityPath.Contains("battery"))
+                                } 
+                                else if (executionOptions.EntityPath.Contains("battery"))
                                 {
                                     func = () => { return loadGeneratee.GenerateBatteryPayload(); };
+                                }
+                                else if (executionOptions.EntityPath.Contains("duress"))
+                                {
+                                    func = () => { return loadGeneratee.GenerateDuressPayload(); };
                                 }
                                 else
                                 {
@@ -166,9 +181,14 @@ namespace LoadGeneratorDotnetCore
                                 if (executionOptions.EntityPath.Contains("signals"))
                                 {
                                     func = () => { return loadGeneratee.GenerateSignalPayload(); };
-                                } else if (executionOptions.EntityPath.Contains("battery"))
+                                } 
+                                else if (executionOptions.EntityPath.Contains("battery"))
                                 {
                                     func = () => { return loadGeneratee.GenerateBatteryPayload(); };
+                                }
+                                else if (executionOptions.EntityPath.Contains("duress"))
+                                {
+                                    func = () => { return loadGeneratee.GenerateDuressPayload(); };
                                 }
                                 else
                                 {
@@ -188,9 +208,14 @@ namespace LoadGeneratorDotnetCore
                                 if (executionOptions.EntityPath.Contains("signals"))
                                 {
                                     func = () => { return loadGeneratee.GenerateSignalPayload(); };
-                                } else if (executionOptions.EntityPath.Contains("battery"))
+                                } 
+                                else if (executionOptions.EntityPath.Contains("battery"))
                                 {
                                     func = () => { return loadGeneratee.GenerateBatteryPayload(); };
+                                }
+                                else if (executionOptions.EntityPath.Contains("duress"))
+                                {
+                                    func = () => { return loadGeneratee.GenerateDuressPayload(); };
                                 }
                                 else
                                 {

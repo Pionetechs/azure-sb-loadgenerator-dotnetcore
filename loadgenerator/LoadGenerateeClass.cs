@@ -60,6 +60,19 @@ namespace LoadGeneratorDotnetCore
             return Encoding.UTF8.GetBytes(battery.ToString());
         }
 
+        public byte[] GenerateDuressPayload()
+        {
+            dynamic duress = new JObject();
+            duress.ReceiverId = "1afb3a5a-d4e8-432c-9808-36836a52c12e";
+            duress.BeaconId = "6E64356144A8675DABB6";
+            duress.TimestampUtc = DateTime.UtcNow.ToString();
+            duress.Name = "ReceiverStaffDuress";
+            duress.SignalLevel = "158";
+            duress.Version = "1";
+
+            return Encoding.UTF8.GetBytes(duress.ToString());
+        }
+
         public abstract Task GenerateBatchAndSend(int batchSize, bool dryRun, CancellationToken cancellationToken, Func<byte[]> loadGenerator);
     }
 }
