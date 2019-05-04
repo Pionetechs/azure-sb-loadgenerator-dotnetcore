@@ -6,8 +6,9 @@ namespace LoadGeneratorDotnetCore
     enum ServiceEnum { eh, sb };
     class ExecutionOptionsClass
     {
-        private string service;
 
+
+        private string service;
         [Option("service", Required = false,
             HelpText = "Valid options: eh or sb for Azure Event Hub or Service Bus respectively.", Default = "eh")]
         public string Service
@@ -36,6 +37,12 @@ namespace LoadGeneratorDotnetCore
                 messageSize = value >= 0 ? value : 0;
             }
         }
+
+        [Option("battery-as-alert", Required = false,
+            HelpText =
+                "Valid options: yes or no, depending on whether or not battery signal should be send as an alert (under 1500) or not.",
+            Default = false)]
+        public bool BatteryLevelAsAlert { get; set; }
 
         [Option('j', "json", Required = false,
             HelpText = "Generate json payload with a random string or just a random string itself", Default = true)]
