@@ -62,7 +62,8 @@ namespace LoadGeneratorDotnetCore
                 } 
                 else if (executionOptions.EntityPath.Contains("battery"))
                 {
-                    func = () => { return loadGeneratee.GenerateBatteryPayload(); };
+                    func = () => { return loadGeneratee.GenerateBatteryPayload(
+                        executionOptions.BatteryLevelAsAlert); };
                 }
                 else if (executionOptions.EntityPath.Contains("duress"))
                 {
